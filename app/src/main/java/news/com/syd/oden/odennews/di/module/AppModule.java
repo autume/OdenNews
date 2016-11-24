@@ -6,6 +6,7 @@ import dagger.Module;
 import dagger.Provides;
 import news.com.syd.oden.odennews.app.App;
 import news.com.syd.oden.odennews.di.ContextLife;
+import news.com.syd.oden.odennews.model.http.RetrofitHelper;
 
 /**
  * 项目名称：OdenNews
@@ -26,5 +27,11 @@ public class AppModule {
     @ContextLife("Application")
     App provideApplicationContext() {
         return application;
+    }
+
+    @Provides
+    @Singleton
+    RetrofitHelper provideRetrofitHelper() {
+        return new RetrofitHelper();
     }
 }

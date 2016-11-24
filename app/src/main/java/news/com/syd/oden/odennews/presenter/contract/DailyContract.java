@@ -2,6 +2,7 @@ package news.com.syd.oden.odennews.presenter.contract;
 
 import news.com.syd.oden.odennews.base.BasePresenter;
 import news.com.syd.oden.odennews.base.BaseView;
+import news.com.syd.oden.odennews.model.bean.DailyListBean;
 
 /**
  * 项目名称：OdenNews
@@ -13,7 +14,7 @@ public interface DailyContract {
 
     interface View extends BaseView {
 
-//        void showContent(DailyListBean info);
+        void showContent(DailyListBean info);
 //
 //        void showMoreContent(String date,DailyBeforeListBean info);
 //
@@ -24,7 +25,7 @@ public interface DailyContract {
 
     interface  Presenter extends BasePresenter<View> {
 
-//        void getDailyData();
+        void getDailyData();
 //
 //        void getBeforeData(String date);
 //

@@ -6,6 +6,7 @@ import dagger.Component;
 import news.com.syd.oden.odennews.app.App;
 import news.com.syd.oden.odennews.di.ContextLife;
 import news.com.syd.oden.odennews.di.module.AppModule;
+import news.com.syd.oden.odennews.model.http.RetrofitHelper;
 
 /**
  * 项目名称：OdenNews
@@ -18,4 +19,6 @@ import news.com.syd.oden.odennews.di.module.AppModule;
 public interface AppComponent {
     @ContextLife("Application")
     App getContext();  // 提供App的Context
+
+    RetrofitHelper retrofitHelper();  //提供http的帮助类
 }

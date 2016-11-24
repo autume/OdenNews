@@ -26,7 +26,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
 
     @Inject
     protected T mPresenter;
-    protected View mView;
+//    protected View mView;
     protected Activity mActivity;
     protected Context mContext;
     private boolean isInited = false;
@@ -59,26 +59,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mPresenter.attachView(this);
-        if (savedInstanceState == null) {
-            if (!isHidden()) {
-                isInited = true;
-                initEventAndData();
-            }
-        } else {
-            if (!isSupportHidden()) {
-                isInited = true;
-                initEventAndData();
-            }
-        }
-    }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (!isInited && !hidden) {
-            isInited = true;
-            initEventAndData();
-        }
     }
 
     @Override
@@ -108,5 +88,4 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
     }
 
     protected abstract void initInject();
-    protected abstract void initEventAndData();
 }

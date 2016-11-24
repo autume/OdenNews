@@ -58,4 +58,5 @@ public class ZhihuMainFragment extends SimpleFragment {
         mTabLayout.getTabAt(2).setText(tabTitle[2]);
         mTabLayout.getTabAt(3).setText(tabTitle[3]);
     }
+
 }
